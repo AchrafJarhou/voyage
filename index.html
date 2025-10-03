@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nos Voyages — Équipe GlobeTrotters</title>
+    <link rel="stylesheet" href="css/voyages.css" />
+    <link rel="stylesheet" href="css/backround.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <h1>GlobeTrotters</h1>
+        <p class="tag">Faire voyager les idées — et les gens</p>
+      </div>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li class="nav-item dropdown">
+            <button class="drop-btn">Continents ▾</button>
+            <ul class="submenu">
+              <li><a href="japon.html">Asie › Japon (Tokyo)</a></li>
+              <li><a href="bresil.html">Amérique du Sud › Brésil (Rio)</a></li>
+              <li><a href="france.html">Europe › France (Paris)</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="drop-btn">Par personne ▾</button>
+            <ul class="submenu">
+              <li><a href="japon.html">Alice — Japon</a></li>
+              <li><a href="bresil.html">Marco — Brésil</a></li>
+              <li><a href="france.html">Sophie — France</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="#team">L'équipe</a></li>
+          <li class="nav-item"><a href="#rêves">Nos rêves</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="hero" class="hero">
+        <h2>Bienvenue chez GlobeTrotters</h2>
+        <p>
+          Nous sommes une équipe de passionnés : lecteurs de guides, chasseurs
+          de spécialités locales, photographes et rêveurs.
+        </p>
+        <a class="cta" href="#team">Rencontrer l'équipe</a>
+      </section>
+
+      <section id="team" class="team">
+        <h3>L'équipe</h3>
+        <div class="team-grid">
+          <article class="person">
+            <img src="./images/KennyMcCormick.webp" alt="Photo d'Alice" />
+            <h4>Alice</h4>
+            <p>Amoureuse du Japon — Tokyo & Kyoto</p>
+            <a class="link-btn" href="japon.html">Voir son pays</a>
+          </article>
+
+          <article class="person">
+            <img src="./images/Kyle-broflovski.webp" alt="Photo de Marco" />
+            <h4>Marco</h4>
+            <p>Fan de plages et samba — Brésil</p>
+            <a class="link-btn" href="bresil.html">Voir son pays</a>
+          </article>
+
+          <article class="person">
+            <img src="./images/Stan-marsh-0.webp" alt="Photo de Sophie" />
+            <h4>Sophie</h4>
+            <p>Rêve de musées et cafés — France</p>
+            <a class="link-btn" href="france.html">Voir son pays</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="rêves" class="rêves">
+        <h3>Nos pays rêvés — tableau comparatif</h3>
+        <table class="dream-table">
+          <thead>
+            <tr>
+              <th>Pays</th>
+              <th>Continent</th>
+              <th>Meilleure saison</th>
+              <th>Activité phare</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Japon</td>
+              <td>Asie</td>
+              <td>Printemps</td>
+              <td>Hanami (cerisiers)</td>
+            </tr>
+            <tr>
+              <td>Brésil</td>
+              <td>Amérique du Sud</td>
+              <td>Étés australs</td>
+              <td>Plages & samba</td>
+            </tr>
+            <tr>
+              <td>France</td>
+              <td>Europe</td>
+              <td>Printemps / été</td>
+              <td>Balades culturelles</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="contact">
+        <h3>Proposez un pays à ajouter</h3>
+        <form
+          class="suggest-form"
+          action="#"
+          method="POST"
+          onsubmit="alert('Formulaire simulé — merci !'); return false;"
+        >
+          <label for="name">Votre nom</label>
+          <input id="name" name="name" type="text" placeholder="Nom" required />
+
+          <label for="country">Pays proposé</label>
+          <input
+            id="country"
+            name="country"
+            type="text"
+            placeholder="Ex: Japon"
+            required
+          />
+
+          <label for="why">Pourquoi ce pays ?</label>
+          <textarea
+            id="why"
+            name="why"
+            rows="4"
+            placeholder="Une phrase"
+            required
+          ></textarea>
+
+          <div class="form-row">
+            <button type="submit" class="btn-primary">Envoyer</button>
+            <button type="reset" class="btn-ghost">Effacer</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> GlobeTrotters — Tous droits réservés.</p>
+      <p>
+        Suivez-nous sur <a href="#" aria-label="Instagram">Instagram</a> •
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </p>
+    </footer>
+
+    <script>
+      // petit JS pour afficher l'année et gérer l'ouverture des sous-menus pour rudeurs tactiles
+      document.getElementById("year").textContent = new Date().getFullYear();
+      document.querySelectorAll(".dropdown .drop-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const parent = e.currentTarget.parentElement;
+          parent.classList.toggle("open");
+        });
+      });
+      // fermer menus en cliquant hors
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown")) {
+          document
+            .querySelectorAll(".dropdown")
+            .forEach((d) => d.classList.remove("open"));
+        }
+      });
+    </script>
+  </body>
+</html>
