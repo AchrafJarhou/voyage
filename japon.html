@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Japon — Alice</title>
+  </head>
+  <body class="japan-page">
+    <header class="top">
+      <a class="home" href="index.html">← Retour</a>
+      <h1>Japon — Tokyo & Kyoto</h1>
+    </header>
+
+    <main class="japan-main">
+      <section class="intro">
+        <figure class="hero-figure">
+          <img src="./images/paysage-japan.webp" alt="Paysage Japon" />
+          <figcaption>Hanami — saison des cerisiers</figcaption>
+        </figure>
+        <p>
+          La culture japonaise allie modernité et tradition. Temple, ramen,
+          onsen et trains impeccables.
+        </p>
+      </section>
+
+      <section class="must-see">
+        <h2>À ne pas manquer</h2>
+        <ul class="list-vertical">
+          <li>Visiter les sanctuaires de Kyoto</li>
+          <li>Monter à la Tokyo Skytree</li>
+          <li>Se perdre dans les petites rues d'Asakusa</li>
+        </ul>
+      </section>
+
+      <section class="culture">
+        <h2>Budget & durée (exemple)</h2>
+        <div class="flex-row">
+          <div class="card">
+            <h3>Budget estimé</h3>
+            <p>1500€ — 2500€ (2 semaines)</p>
+          </div>
+          <div class="card">
+            <h3>Meilleure période</h3>
+            <p>Printemps (fin mars — avril)</p>
+          </div>
+          <div class="card">
+            <h3>Conseil local</h3>
+            <p>Essayez les izakayas hors des zones touristiques.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-like">
+        <h2>Quiz rapide</h2>
+        <form class="quiz" onsubmit="return checkQuiz(event);">
+          <label>Laquelle de ces spécialités est japonaise ?</label>
+          <div>
+            <label><input type="radio" name="q1" value="ok" /> Sushi</label>
+            <label><input type="radio" name="q1" value="ko" /> Feijoada</label>
+          </div>
+          <label>Combien de jours préconisez-vous pour Tokyo ?</label>
+          <input
+            class="input-quiz"
+            type="number"
+            min="1"
+            max="30"
+            value="4"
+            name="days"
+          />
+          <button class="btn-primary" type="submit">Valider</button>
+          <p id="result" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="small-foot">Page stylisée différemment — thème Japon</footer>
+
+    <script>
+      function checkQuiz(e) {
+        e.preventDefault();
+        const ok = document.querySelector('input[name="q1"]:checked');
+        const days = document.querySelector('input[name="days"]').value;
+        let text = "";
+        if (ok && ok.value === "ok") text += "Bonne réponse ! ";
+        else text += "Presque — sushi est japonais. ";
+        text += `Vous proposez ${days} jour(s) pour Tokyo.`;
+        document.getElementById("result").textContent = text;
+        return false;
+      }
+    </script>
+  </body>
+</html>
