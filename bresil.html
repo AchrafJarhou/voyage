@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Brésil — Marco</title>    
+  </head>
+  <body class="bresil">
+    <header class="top-b">
+      <a href="index.html" class="home">← Accueil</a>
+      <h1>Brésil — Rio & Amazonie</h1>
+    </header>
+
+    <main class="content-b">
+      <section class="intro-b">
+        <p>Plages, forêt et fêtes : le Brésil est une explosion de couleurs.</p>
+      </section>
+
+      <section class="gallery">
+        <div class="row">
+          <img src="./images/rio-plage.jpg" alt="Rio" />
+          <img src="./images/foret-amazonie.webp" alt="Amazonie" />
+          <img src="./images/fete-bresile.png" alt="Festa" />
+        </div>
+      </section>
+
+      <section>
+        <h2>Gastronomie</h2>
+        <ol>
+          <li>Feijoada</li>
+          <li>Caipirinha (boisson)</li>
+          <li>Acarajé</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Inscris-toi pour une checklist</h2>
+        <form
+          class="mail"
+          onsubmit="alert('Checklist envoyée (simulation)'); return false;"
+        >
+          <label for="mail">Email</label>
+          <input id="mail" type="email" required />
+          <label for="pref">Je préfère :</label>
+          <select id="pref">
+            <option>Plages</option>
+            <option>Forêt</option>
+            <option>Fêtes</option>
+          </select>
+          <button class="btn-primary">Recevoir la checklist</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="foot-b">Thème coloré & festif — Brésil</footer>
+  </body>
+</html>
