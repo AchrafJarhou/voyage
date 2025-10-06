@@ -1,0 +1,86 @@
+/* bresil.css — ambiance chaude, couleurs vives */
+.bresil {
+  background: linear-gradient(120deg, #fff6ed, #fff1f0);
+  color: #3a1f12;
+  padding: 18px;
+  min-height: 100vh;
+}
+.home {
+  color: #0f3b44;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 59, 68, 0.06);
+}
+.top-b {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-around;
+}
+.content-b {
+  max-width: 1000px;
+  margin: 12px auto;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.row img {
+  width: 32%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(234, 95, 40, 0.08);
+  transition: transform 0.22s ease;
+}
+.row img:hover {
+  transform: scale(1.04) rotate(-1deg);
+  cursor: pointer;
+}
+.mail {
+  display: grid;
+  gap: 8px;
+  max-width: 100%;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  margin: auto;
+}
+.foot-b {
+  text-align: center;
+  margin-top: 18px;
+  color: #6b3b2a;
+}
+.mail input,
+.mail textarea {
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+#pref {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+#pref:focus {
+  /* outline: none; */
+  /* border-color: #ea5f28; */
+}
+.mail button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ea5f28;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.22s ease;
+}
+.mail button:hover {
+  background: #d35400;
+}
